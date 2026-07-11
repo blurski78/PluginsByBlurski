@@ -20,7 +20,7 @@ let currentNotif = null;
 let overlayRef = null;
 let animFrame = null;
 
-// Plugin metadata matching your theme format
+// Plugin metadata with YOUR info
 const manifest = {
   name: "HoldToReply",
   description: "Hold notification banner for 2 seconds to open reply box",
@@ -35,7 +35,7 @@ const manifest = {
   version: "1.0.0"
 };
 
-module.exports = class HoldToReply {
+class HoldToReply {
   constructor() {
     this.patch = null;
     this.name = manifest.name;
@@ -208,4 +208,8 @@ module.exports = class HoldToReply {
   getManifest() {
     return manifest;
   }
-};
+}
+
+// ⚠️ EXPORT WITH YOUR CLASS NAME ⚠️
+module.exports = HoldToReply;
+module.exports.manifest = manifest;
